@@ -1,0 +1,266 @@
+/* Base layout */
+body, html {
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  height: 100vh;
+  background: radial-gradient(circle at top right, #007cf0, #00dfd8);
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.bg-blur {
+  position: absolute;
+  top: -200px;
+  left: -150px;
+  width: 600px;
+  height: 600px;
+  background: rgba(255, 255, 255, 0.05);
+  filter: blur(100px);
+  z-index: 0;
+}
+
+/* Container setup */
+.container {
+  z-index: 1;
+  width: 100%;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+}
+
+/* Game box styling */
+.game-box {
+  background: white;
+  border-radius: 22px;
+  padding: 60px 50px;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25);
+  max-width: 800px; /* ← Increased width */
+  width: 100%;
+  text-align: center;
+}
+
+/* Responsive padding for small devices */
+@media (max-width: 600px) {
+  .game-box {
+    padding: 40px 20px;
+  }
+}
+
+/* Typography */
+h1 {
+  margin-bottom: 18px;
+  font-size: 40px;
+  color: #222;
+}
+
+.subtext {
+  color: #666;
+  margin-bottom: 30px;
+  font-size: 18px;
+}
+
+/* Inputs */
+input[type="number"],
+input[type="text"] {
+  padding: 16px;
+  width: 100%;
+  font-size: 18px;
+  border-radius: 10px;
+  border: 1.5px solid #ccc;
+  outline: none;
+  transition: 0.3s;
+  margin-bottom: 10px;
+}
+
+input:focus {
+  border-color: #007bff;
+}
+
+/* Name input + button alignment */
+#playerNameInput {
+  width: 80%;
+  max-width: 400px;
+  display: inline-block;
+  margin-bottom: 20px;
+}
+
+.modal button.primary {
+  display: inline-block;
+  margin-left: 10px;
+  padding: 14px 20px;
+  font-size: 16px;
+  vertical-align: middle;
+}
+
+/* Buttons */
+button {
+  padding: 12px 20px;
+  font-size: 16px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.primary {
+  background-color: #007bff;
+  color: white;
+}
+
+.primary:hover {
+  background-color: #0056b3;
+}
+
+.secondary {
+  background-color: #6c757d;
+  color: white;
+}
+
+.secondary:hover {
+  background-color: #495057;
+}
+
+/* Button grouping */
+.button-group {
+  margin-top: 16px;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+/* Feedback text */
+.feedback {
+  font-size: 20px;
+  font-weight: bold;
+  margin-top: 28px;
+  min-height: 24px;
+  transition: all 0.3s ease;
+}
+
+.feedback.success {
+  color: #28a745;
+}
+.feedback.warning {
+  color: #ffc107;
+}
+.feedback.error {
+  color: #dc3545;
+}
+
+/* Info section */
+.info {
+  margin-top: 20px;
+  font-size: 18px;
+  color: #444;
+}
+
+/* Modal overlay */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+}
+
+/* Modal box */
+.modal {
+  background: white;
+  padding: 40px 30px;
+  border-radius: 16px;
+  text-align: center;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+  max-width: 600px;
+  width: 100%;
+}
+
+/* Responsive Layout */
+@media (max-width: 1024px) {
+  .game-box {
+    padding: 40px 30px;
+    max-width: 90%;
+  }
+
+  .modal {
+    padding: 30px 20px;
+    max-width: 90%;
+  }
+
+  input[type="number"],
+  input[type="text"] {
+    font-size: 16px;
+    padding: 14px;
+  }
+
+  h1 {
+    font-size: 32px;
+  }
+
+  .subtext,
+  .info,
+  .feedback {
+    font-size: 16px;
+  }
+
+  .button-group {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  button {
+    width: 100%;
+    font-size: 16px;
+    padding: 12px;
+  }
+
+  #playerNameInput {
+    width: 100%;
+    max-width: none;
+  }
+}
+
+@media (max-width: 600px) {
+  .game-box {
+    padding: 30px 20px;
+  }
+
+  .modal {
+    padding: 25px 15px;
+  }
+
+  h1 {
+    font-size: 28px;
+  }
+
+  .feedback {
+    font-size: 14px;
+  }
+
+  .info,
+  .subtext {
+    font-size: 14px;
+  }
+
+  button {
+    font-size: 14px;
+    padding: 10px;
+  }
+
+  input[type="number"],
+  input[type="text"] {
+    font-size: 14px;
+    padding: 12px;
+  }
+}
+
+
+final

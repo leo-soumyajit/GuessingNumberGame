@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Guess the Number</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+<!-- 👤 Name Input Modal -->
+<div id="nameModal" class="modal-overlay">
+    <div class="modal">
+        <h2>Welcome!</h2>
+        <p>Enter your name to begin:</p>
+        <input type="text" id="playerNameInput" placeholder="Your name..." />
+        <button onclick="startGame()" class="primary">Start Game</button>
+    </div>
+</div>
+
+<!-- Background Blur -->
+<div class="bg-blur"></div>
+
+<!-- Game Container -->
+<div class="container">
+    <div class="game-box" id="gameBox" style="display: none;">
+        <h1><span>🎯</span> Guess the Number</h1>
+        <p class="subtext">Enter a number between <strong>1</strong> and <strong>100</strong></p>
+
+        <p class="info" id="welcomeText"></p>
+
+        <input
+                type="number"
+                id="guessInput"
+                placeholder="Your guess..."
+                min="1"
+                max="100"
+        />
+
+        <div class="button-group">
+            <button class="primary" onclick="makeGuess()">
+                <span>🎲</span> Guess
+            </button>
+            <button class="secondary" onclick="restartGame()">
+                <span>🔄</span> Restart
+            </button>
+        </div>
+
+        <p class="feedback" id="feedback"></p>
+
+        <p class="info">
+            <span>🎯</span> Attempts Left:
+            <span id="attemptsLeft">5</span>
+        </p>
+    </div>
+</div>
+
+
+<script src="script.js"></script>
+</body>
+</html>
